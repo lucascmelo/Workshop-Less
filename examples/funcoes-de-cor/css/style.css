@@ -1,0 +1,62 @@
+div {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  padding: 20px;
+  display: inline-block;
+  float: left;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  font: 18px arial;
+  text-transform: uppercase;
+}
+#lighten {
+  background-color: #00b300;
+  /*	retorna uma cor que é 10% *mais clara* que @color */
+
+}
+#darken {
+  background-color: #004d00;
+  /*	retorna uma cor que é 10% *mais escura* que @color */
+
+}
+#saturate {
+  background-color: #008000;
+  /*	retorna uma cor 10% *mais* saturada que @color */
+
+}
+#desaturate {
+  background-color: #067a06;
+  /* retorna uma cor 10% *menos* saturada que @color */
+
+}
+#fadein {
+  background-color: #008000;
+  /* retorna uma cor 50% *mais* transparente que @color */
+
+}
+#fadeout {
+  background-color: rgba(0, 128, 0, 0.5);
+  /* retorna uma cor 50% *mais* transparente que @color */
+
+}
+#fade {
+  background-color: rgba(0, 128, 0, 0.1);
+  /* retorna @color com 10% de transparencia */
+
+}
+#spin {
+  background-color: #008040;
+  /* retorna uma cor com uma matiz (hue) 30 graus maior que @color */
+
+}
+#spin2 {
+  background-color: #408000;
+  /* retorna uma cor com uma matiz (hue) 30 graus menor que @color */
+
+}
+#mix {
+  background-color: #004080;
+  /* retorna uma mistura entre a @color1 e @color2 */
+
+}

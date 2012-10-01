@@ -1,0 +1,23 @@
+#header {
+  background-color: black;
+}
+#header #nav_main li,
+#header #nav_main a {
+  color: #ccc;
+  text-decoration: none;
+  display: inline-block;
+  float: left;
+  margin: 20px;
+}
+#header #nav_main li:hover,
+#header #nav_main a:hover {
+  color: red;
+}
+#header #nav_main li.active,
+#header #nav_main a.active {
+  color: blue;
+}
+#header #nav_main li.active:hover,
+#header #nav_main a.active:hover {
+  text-decoration: underline;
+}

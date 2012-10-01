@@ -1,0 +1,106 @@
+/*---------------------------------------------------
+    LESS Elements 0.6
+  ---------------------------------------------------
+    A set of useful LESS mixins by Dmitry Fadeyev
+    Special thanks for mixin suggestions to:
+      Kris Van Herzeele,
+      Benoit Adam,
+      Portenart Emile-Victor,
+      Ryan Faerman
+
+    More info at: http://lesselements.com
+-----------------------------------------------------*/
+#tudo {
+  width: 800px;
+  margin: 10px auto 15px;
+}
+#tudo #cabecalho {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+#tudo #cabecalho .logo {
+  float: left;
+}
+#tudo #cabecalho #menu {
+  float: right;
+}
+#tudo #cabecalho #menu li,
+#tudo #cabecalho #menu a {
+  display: inline-block;
+  float: left;
+}
+#tudo #cabecalho #menu li,
+#tudo #cabecalho #menu a {
+  width: 100px;
+  font: 22px arial;
+  color: white;
+  text-decoration: none;
+}
+#tudo #cabecalho #menu li:hover,
+#tudo #cabecalho #menu a:hover {
+  color: gray;
+  text-decoration: underline;
+}
+#tudo #banner {
+  width: 746px;
+  height: 450px;
+  margin: 0 auto 20px;
+  display: block;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: url('../img/sword_fight.gif') no-repeat;
+}
+#tudo #conteudo {
+  width: 800px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  display: inline-block;
+  background-color: white;
+}
+#tudo #conteudo #colA,
+#tudo #conteudo #colB,
+#tudo #conteudo #colC {
+  width: 246.66666666666669px;
+  margin-left: 20px;
+  padding: 20px 0;
+  display: inline-block;
+  float: left;
+}
+#tudo #conteudo #colA h2,
+#tudo #conteudo #colB h2,
+#tudo #conteudo #colC h2 {
+  font-size: 28px;
+  color: red;
+}
+#tudo #conteudo #colA .button,
+#tudo #conteudo #colB .button,
+#tudo #conteudo #colC .button {
+  width: 100px;
+  height: 30px;
+  font-size: 12px;
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 10px 5px 50px #000000;
+  -moz-box-shadow: 10px 5px 50px #000000;
+  box-shadow: 10px 5px 50px #000000;
+}
+#tudo #rodape {
+  margin-top: 20px;
+  color: white;
+  font-size: 16px;
+}

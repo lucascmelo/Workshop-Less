@@ -1,0 +1,21 @@
+#box{
+	background:gray;
+	h1{
+		color:#fff;font-size:15px;
+	}
+
+	.centralize(@width, @height){
+		width: @width;
+		height: @height;
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin:-(@height/2) 0 0 @width/2*-1;
+	}
+}
+
+#footer{
+	#box > .centralize(100px, 200px);
+	background-color: green;
+	
+}

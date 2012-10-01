@@ -1,0 +1,13 @@
+@import '../../operacoes/css/style.css';
+.img-replacement {
+  display: block;
+  overflow: hidden;
+  text-indent: -999em;
+}
+#title {
+  font: 16px arial;
+  color: red;
+  display: block;
+  overflow: hidden;
+  text-indent: -999em;
+}

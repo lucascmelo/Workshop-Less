@@ -1,0 +1,39 @@
+.bgc (dark, @color) {
+	background-color: darken(@color, -15%);
+}
+.bgc (light, @color) {
+	background-color: lighten(@color, 25%);
+}
+
+@pat_mat: dark;
+
+body{
+	.bgc(@pat_mat, green);
+}
+
+#box{
+	@pat_mat: light;
+
+	.bgc(@pat_mat, green);
+}
+
+
+.border_radius(@radius){
+	border-radius: @radius;
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+}
+.border_radius(@top, @left, @bottom, @right){
+	border-radius: @arguments;
+	-moz-border-radius: @arguments;
+	-webkit-border-radius: @arguments;
+}
+
+#box{
+	.border_radius(10px);
+}
+#box_aside{
+	@pat_mat: light;
+	.border_radius(10px 5px 15px 20px);
+	.bgc(@pat_mat, green);
+}

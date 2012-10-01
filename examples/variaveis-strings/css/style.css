@@ -1,0 +1,10 @@
+h1 {
+  color: #999999;
+}
+a {
+  width: 800px;
+  height: 800px;
+  display: block;
+  color: #000000;
+  background: url("../../../slides/lib/img/lessapp.png") 0 0 no-repeat;
+}

@@ -1,0 +1,22 @@
+#header{
+	background-color:black;
+	#nav_main{
+		li,a{
+			color:#ccc;
+			text-decoration:none;
+			display:inline-block;
+			float:left;
+			margin:20px;
+			
+			&:hover{
+				color:red;
+			}
+			&.active{
+				color:blue;
+				&:hover{
+					text-decoration:underline;
+				}
+			}
+		}
+	}
+}

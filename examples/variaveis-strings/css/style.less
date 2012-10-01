@@ -1,0 +1,20 @@
+// colors
+@links:  #ccc;
+@titles: #999;
+// end collors
+
+// path
+@path: '../../../slides/lib/img';
+// end path
+
+h1{
+	color:@titles;
+}
+a{
+	width:800px;
+	height:800px;
+	display:block;
+	@links: #000;
+	color:@links;
+	background: url("@{path}/lessapp.png") 0 0 no-repeat;
+}

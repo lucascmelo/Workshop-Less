@@ -1,0 +1,64 @@
+@color: green;
+@color2: blue;
+
+div{
+	width:150px;
+	height:150px;
+	margin:20px;
+	padding:20px;
+	display:inline-block;
+	float:left;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	font:18px arial;
+	text-transform:uppercase;
+}
+#lighten{
+	background-color: lighten(@color, 10%); 
+	/*	retorna uma cor que é 10% *mais clara* que @color */
+}
+
+#darken{
+	background-color: darken(@color, 10%); 
+	/*	retorna uma cor que é 10% *mais escura* que @color */
+}
+
+#saturate{
+	background-color: saturate(@color, 10%);
+	/*	retorna uma cor 10% *mais* saturada que @color */
+}
+
+#desaturate{
+	background-color: desaturate(@color, 10%); 
+	/* retorna uma cor 10% *menos* saturada que @color */
+}
+
+#fadein{
+	background-color: fadein(@color, 50%); 
+	/* retorna uma cor 50% *mais* transparente que @color */
+}
+
+#fadeout{
+	background-color: fadeout(@color, 50%); 
+	/* retorna uma cor 50% *mais* transparente que @color */
+}
+
+#fade{
+	background-color: fade(@color, 10%); 
+	/* retorna @color com 10% de transparencia */
+}
+
+#spin{
+	background-color: spin(@color, 30); 
+	/* retorna uma cor com uma matiz (hue) 30 graus maior que @color */
+}
+
+#spin2{
+	background-color: spin(@color, -30); 
+	/* retorna uma cor com uma matiz (hue) 30 graus menor que @color */
+}
+
+#mix{
+	background-color: mix(@color, @color2); 
+	/* retorna uma mistura entre a @color1 e @color2 */
+}

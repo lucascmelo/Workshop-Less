@@ -1,0 +1,17 @@
+body {
+  background-color: #00cd00;
+}
+#box {
+  background-color: #00ff00;
+}
+#box {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+#box_aside {
+  border-radius: 10px 5px 15px 20px;
+  -moz-border-radius: 10px 5px 15px 20px;
+  -webkit-border-radius: 10px 5px 15px 20px;
+  background-color: #00ff00;
+}

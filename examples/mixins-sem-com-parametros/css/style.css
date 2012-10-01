@@ -1,0 +1,5 @@
+#nav_main li {
+  width: 60px;
+  float: left;
+  display: inline-block;
+}

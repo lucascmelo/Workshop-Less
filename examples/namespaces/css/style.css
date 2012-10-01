@@ -1,0 +1,16 @@
+#box {
+  background: gray;
+}
+#box h1 {
+  color: #fff;
+  font-size: 15px;
+}
+#footer {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -50px;
+  background-color: green;
+}

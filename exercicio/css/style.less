@@ -1,0 +1,97 @@
+@import 'elements.less';
+
+
+// variaveis
+@path: '../img';
+@width_total: 800px;
+
+#mixis{
+	.nav-left(){
+		display:inline-block;
+		float:left;
+	}
+}
+
+// tudo
+body{
+	.gradient(red,blue, red);
+}
+#tudo{
+	width:@width_total;
+	margin:10px auto 15px;
+	// cabecalho
+	#cabecalho{
+		display:inline-block;
+		margin-bottom:20px;
+		.logo{
+			float:left;
+		}
+		#menu{
+			float:right;
+			li,a{
+				#mixis > .nav-left();
+				&{
+					width:100px;
+					font:22px arial;
+					color:white;
+					text-decoration:none;
+				}
+				&:hover{
+					color:gray;
+					text-decoration:underline;
+				}
+			}
+		}
+	}
+	// banner
+	#banner{
+		width:746px;
+		height:450px;
+		margin:0 auto 20px;
+		display:block;
+		.rounded(20px);
+		background: url('@{path}/sword_fight.gif') no-repeat;
+	}
+	// conteudo
+	#conteudo{
+		width:@width_total;
+		.rounded(20px);
+		display:inline-block;
+		background-color: white;
+		#colA,#colB,#colC{
+			width:(@width_total/3)-20;
+			margin-left:20px;
+			padding:20px 0;
+			h2{
+				font-size:28px;
+				color:red;
+			}
+			#mixis > .nav-left();
+			
+			.button{
+				width:100px;
+				height:30px;
+				font-size:12px;
+				background-color: red;
+				color:#fff;
+				cursor:pointer;
+				.rounded(20px);
+				.box-shadow(10px 5px 50px black);
+			}
+		}
+	}
+	//rodape
+	#rodape{
+		margin-top:20px;
+		color:white;
+		font-size:16px;
+	}
+}
+
+
+
+
+
+
+
+

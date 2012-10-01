@@ -1,0 +1,75 @@
+/* Topo
+--------------------------------------------------------------------------------------------- */
+.todo { width: 760px; height: auto;min-height:1000px; margin:0 auto; background: url(../images/bgAll.jpg) 0 0 #c7c7c7 no-repeat;}
+.todo .topo {width: 760px; height:227px}
+.todo .topo .logo { text-indent: -999em; background: url(../images/logo.png) no-repeat 0 0; width: 203px; height: 109px;margin-right:56px; position: relative; top: 69px; left:46px; float: left; display: block; }
+.todo .topo .logo-rosa { text-indent: -999em; background: url(../images/mb-logo-rosa.png) no-repeat 0 0; width: 259px; height: 157px;margin:69px 0 0 49px; float: left; display: block; }
+.todo .topo .logo-verde { text-indent: -999em; background: url(../images/mb-logo-verde.png) no-repeat 0 0; width: 259px; height: 157px; position: relative; top: -35px; float: left; display: block; }
+
+.todo .topo .menu {height: auto; position: relative; top: 46px;left:32px; float: left; display: block}
+.todo .topo .menu li {float:left;display:inline-block;}
+.todo .topo .menu a {width:150px;height:33px;margin-right:7px;padding-top:14px;float:left;display:inline-block;background: url(../images/nav-main.png) 0 0 no-repeat;font:20px 'DuepuntozeroboldRegular';text-align:center;text-transform:uppercase;color:#fff;}
+.todo .topo .menu a:hover{text-decoration:underline;}
+
+
+.todo .topo .aparelhos a{background-position: 0 0}
+.todo .topo .ofertas a{background-position: -156px 0}
+.todo .topo .wishlist a{background-position: -315px 0;margin-right:0;}
+
+#cat-prod{width:400px;display:inline-block;position:relative;top:68px;left:58px;}
+
+.todo .topo .categoria {height:20px;margin:0 auto 5px;display:table}
+.todo .topo .categoria li {display:inline-block;float: left;padding:0 5px; border-right:2px solid #eba3b6;}
+.todo .topo .categoria li:last-child{border:none}
+.todo .topo .categoria li a { font-family: "DuepuntozeroRegular";float:left;font-size:18px;color:#eba3b6;text-decoration: none;}
+.todo .topo .categoria li a:hover, .todo .topo .categoria li .active{color:#ed174f}
+
+.todo .topo .sub-categoria {height: 10px; margin: 4px auto; display: table; }
+.todo .topo .sub-categoria li { padding:0 6px;border-right:2px solid #eba3b6; float: left; display:inline-block;}
+.todo .topo .sub-categoria li:last-child{border:none}
+.todo .topo .sub-categoria li a { font-family: "DuepuntozeroRegular"; float:left;font-style: normal; font-size: 14px; color: #eba3b6; text-decoration: none; display: inline-block; }
+.todo .topo .sub-categoria li a:hover, .todo .topo .sub-categoria li a.active { color: #ed174f; }
+
+.todo .topo .bar-hrz , .todo .topo .bar-hrz2{width:100%;height:4px;background-color: #ed174f;border:none;padding:0;margin:0;}
+/* Conteúdo
+--------------------------------------------------------------------------------------------- */
+.todo .conteudo {width: 760px; height: auto; margin-top: 2px; padding-top: 5px; }
+
+/*Aparelho */
+.todo .conteudo .conteudo-aparelhos {height: auto; margin: 0 0 80px 80px; padding-bottom: 10px;display:inline-block;}
+.todo .conteudo .conteudo-aparelhos .conteudo-direita { width: 315px; height: 288px;margin-right:20px; float: left; }
+.conteudo-aparelhos .conteudo-direita .ligth{display:block;}
+
+.todo .conteudo .conteudo-aparelhos .conteudo-esquerda { width:183px;height:299px; float: left;position: relative; padding:55px 43px 0 64px;display:inline-block;background: url(../images/box-price.png) no-repeat;}
+
+.conteudo-esquerda .titulo { margin-bottom: 10px;font:22px "DuepuntozeroRegular";color: #fff}
+.conteudo-esquerda .descricao { font:13px "DuepuntozeroRegular";color: #fff;line-height:16px}
+.conteudo-esquerda .total {font:16px "DuepuntozeroRegular";color: #fff}
+.conteudo-esquerda .parcelas { font: 22px "DuepuntozeroRegular";color: #fff; }
+.conteudo-esquerda .parcelas .real{font-size:44px}
+
+.conteudo-esquerda .selecione { margin:10px 0 0 30px;display:inline-block;font-family: "DuepuntozeroRegular"; font-size: 16px; font-style: normal; color: #fff; }
+.conteudo-esquerda .comparar, .comparar1 { display: none;position:absolute;bottom:50px;right:-10px}
+
+/* Ofertas */
+.menu-wish{width: 150px;position: relative;top: 80px;left: 175px;display: inline-block}
+.todo .topo .menu-wishlist {width:130px;height:10px;margin:0 auto 10px;display:table}
+.todo .topo .menu-wishlist li {padding:0 6px;border-right:2px solid #eba3b6;float:left;display:inline-block}
+.todo .topo .menu-wishlist li:last-child{border:none}
+.todo .topo .menu-wishlist li a {font:16px "DuepuntozeroRegular";color:#eba3b6;float:left;display:inline-block}
+.todo .topo .menu-wishlist li a:hover, .todo .topo .menu-wishlist li a.active { color: #ed174f; }
+
+.todo .conteudo .conteudo-ofertas { width: 550px; height: auto; margin: 0 auto; padding-bottom: 10px; display: table; }
+.todo .conteudo .conteudo-ofertas .oferta-conteudo-direita { width: 315px; height: 288px; float: left; }
+.rede a, .rede iframe{margin-right:5px;float:left;display:inline-block;}
+.rede .guardar{margin-right:40px}
+.rede .pin-it-button{margin-top:42px}
+
+.todo .conteudo .conteudo-ofertas .oferta-conteudo-esquerda { background: url(../images/mb-splash.png) no-repeat -1px 0;  width: 200px; height: 215px; padding-top: 45px; padding-left: 35px; float: left; }
+.todo .conteudo .conteudo-ofertas .oferta-conteudo-esquerda .total { font-family: "DuepuntozeroRegular"; font-size: 16px; font-style: normal; color: #FFF551; float:left; margin-top:-18px;}
+.todo .conteudo .conteudo-ofertas .oferta-conteudo-esquerda .titulo { font-family: "DuepuntozeroboldRegular"; font-size: 20px; font-style: normal; color: #FFF551; width: 165px; height: auto; display: block; }
+.todo .conteudo .conteudo-ofertas .oferta-conteudo-esquerda .parcelas { font-family: "DuepuntozeroboldRegular"; font-size: 20px; font-style: normal; color: #FFF551; margin-top:-18px; float:left;}
+.todo .conteudo .conteudo-ofertas .oferta-conteudo-esquerda .descricao { text-align: justify; font-family: "DuepuntozeroRegular"; font-size: 12px; font-style: normal; color: #FFF551; width: 170px; height: auto; display: block; }
+.todo .conteudo .conteudo-ofertas .oferta-conteudo-esquerda .selecione { font-family: "DuepuntozeroRegular"; font-size: 16px; font-style: normal; color: #0000EE; float:left; margin-top:-18px;}
+.todo .conteudo .conteudo-ofertas .oferta-conteudo-esquerda .comparar { margin-top: 10px; display: none; }
+.todo .conteudo .conteudo-ofertas .oferta-conteudo-esquerda .desconto { margin-top: 3px; margin-left: 50px; }
