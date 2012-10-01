@@ -1,7 +1,4 @@
 Workshop {LESS}
 
-Slides
-Examples
-Exercicio
-Programas.
+Slides, Examples, Exercicio, Programas.
 
