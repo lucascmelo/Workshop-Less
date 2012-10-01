@@ -1,0 +1,938 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Aumentando a produtividade com o {LESS}</title>
+
+		<meta name="description" content="Talk: Aumentando a produtividade com o {LESS}">
+		<meta name="author" content="Lucas Cavalcanti">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<style type="text/css">
+		.white .state-background{background-color:#fff;}
+		.red .state-background{background:rgba( 200, 50, 30, 0.6 )}
+		.bootstrap .state-background{
+			background: #020031; /* Old browsers */
+			  background: -moz-linear-gradient(45deg,  #020031 0%, #6d3353 100%); /* FF3.6+ */
+			  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353)); /* Chrome,Safari4+ */
+			  background: -webkit-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* Chrome10+,Safari5.1+ */
+			  background: -o-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* Opera 11.10+ */
+			  background: -ms-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* IE10+ */
+			  background: linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* W3C */
+			  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020031', endColorstr='#6d3353',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+			  -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+			     -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+			          box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+		}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Aumentando a produtividade com o</h1>
+					<h3 style="width:199px;height:81px;display:block;margin:0 auto;background:url(lib/img/less.png) no-repeat"></h3>
+				</section>
+				
+				<section>
+					<h2>Lucas Cavalcanti</h2>
+					<p>Front end Engineering<br/>
+					<p>at: <a href="http://mgrtech.com.br/" target="_blank">MGR Tech</a></p>
+					<p>
+					    <img src="lib/img/foto.jpg" alt="" />
+					</p>
+				</section>
+				
+				<!-- Example of nested vertical slides -->
+				<section>
+						<h2>O que veremos:</h2>
+						<ol>
+							<li>CSS e seus problemas</li>
+							<li>O que é o {Less}?</li>
+							<li>O que é um pré-processador?</li>
+							<li>Porque usar {Less}?</li>
+							<li>Como utilizar</li>
+							<li>Usando Variáveis</li>
+							<li>Usando Mixins</li>
+							<li>Pattern-Matching</li>
+							<li>Regras aninhadas</li>
+							<li>Operações</li>
+							<li>Funções de cor</li>
+							<li>Namespaces</li>
+							<li>@import</li>
+							<li>Comentários</li>
+							<li>Bônus</li>
+						</ol>
+				</section>
+				<section>
+					<h2>CSS e seus problemas?</h2>
+					<p>Como estamos acostumados a codar?</p>
+					<a href="../examples/css_e_seus_problemas/style.css" target="_blank">Link</a>
+				</section>
+				<section>
+					<h2>CSS e seus problemas?</h2>
+					<p>OK!<br/> Mas qual é o problema?</p>
+				</section>
+				<section>
+					<h2>CSS e seus problemas?</h2>
+					<p>Desorganização</p>
+					<img width="500" height="auto" src="lib/img/desorganizado.jpeg" alt="Desorganizado">
+				</section>
+				<section>
+					<h2>CSS e seus problemas?</h2>
+					<p>Repetição</p>
+					<img width="800" height="auto" src="lib/img/agent-smith.jpeg" alt="Desorganizado">
+				</section>
+				<section>
+					<h2>CSS e seus problemas?</h2>
+					<p>Manutenção</p>
+					<img width="500" height="auto" src="lib/img/workaholic.jpeg" alt="" />
+				</section>
+				<section>
+					<h2>CSS e seus problemas?</h2>
+					<p>2 Devs trabalhando no mesmo CSS</p>
+					<img width="800" height="auto" src="lib/img/sword_fight.gif" alt="" />
+				</section>
+				<section>
+					<h2>CSS e seus problemas?</h2>
+					<p>E como resolvemos isso?</p>
+				</section>
+				<section data-state="white">
+					<section></section>
+					<section>
+						<br/><br/><br/>
+						<img width="500" height="auto" src="lib/img/less.jpeg" alt="" style="background:none;border:none;-webkit-box-shadow:none;box-shadow" />
+					</section>
+				</section>
+				<section data-state="red">
+					<h2>O que é o {LESS}?</h2>
+					<p>O LESS é um pré-processador de CSS.</p>
+				</section>
+				<section data-state="red">
+					<h2>E o que é Pré-processador?</h2>
+					<p>É um programa que pega um texto e efetua conversões léxicas.</p>
+				</section>
+				<section data-state="red">
+					<h2>Sim... E o que danado é uma <br/>conversão léxica?</h2>
+					<p>
+					    <img src="lib/img/poker-face.jpeg" alt="" />
+					</p>
+				</section>
+				<section data-state="red">
+					<h2>O que são conversões Léxicas?</h2>
+					<p><strong>Léxico</strong> pode ser definido como o acervo de palavras de um determinado idioma/linguagem</p>
+					<p>
+					    <img src="lib/img/not-bad.png" alt="" />
+					</p>
+				</section>
+
+				<section data-state="red">
+					<h2>Por que usar o {less}?</h2>
+					<ol>
+						<li>Menos repetição</li>
+						<li>É Simples</li>
+						<li>Possibilita criar Variáveis, Funções e Métodos</li>
+						<li>Aninhar seletores</li>
+					</ol>
+				</section>
+
+				<section  data-state="red">
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<h2>Como utilizar?</h2>
+				</section>
+
+				<section  data-state="red">
+					<a href="http://incident57.com/less/" target="_blank">
+					<h2>Less.app</h2>
+					<p>
+					    <img src="lib/img/lessapp.png" alt="" />
+					</p>
+					</a>
+					<a href="http://incident57.com/less/" target="_blank">Download</a>
+				</section>
+				
+				<section  data-state="red">
+					<a href="http://winless.org/" target="_blank">
+					<h2>WinLess</h2>
+					<p>
+					    <img src="lib/img/winless.png" alt="" />
+					</p>
+					</a>
+					<a href="http://winless.org/" target="_blank">Download</a>
+				</section>
+				<section data-markdown>
+					<h2>Usando Variáveis</h2>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							@cor_padrao: #eee;
+							body{
+								color:@cor_padrao;
+							}
+							#footer{
+								color:@cor_padrao;
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Usando Variáveis</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							body{
+								color:#eee;
+							}
+							#footer{
+								color:#eee;
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Usando Variáveis</h2>
+					Variáveis com escopo.<br/>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							@largura: 500px;
+							body{
+								width:@largura;
+							}
+							#footer{
+								@largura: 300px;
+								
+								width:@largura;
+							}
+						</code>
+					</pre>
+				</section>
+
+				<section data-markdown>
+					<h2>Usando Variáveis</h2>
+					Variáveis com escopo.<br/>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							body{
+								width:500px;
+							}
+							#footer{
+								width:300px;
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Usando Variáveis</h2>
+					Interpolação de strings<br/>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							@path: '../lib/assets/images';
+							
+							#header{
+								background: url("@{path}/logotipo.png");
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Usando Variáveis</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							#header{
+								background: url("../lib/assets/images/logotipo.png");
+							}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Usando Mixins</h2>
+					<p>
+						Imagine uma classe sendo chamada por outra classe.
+					</p>
+				</section>
+				
+				<section data-markdown>
+					<h2>Usando Mixins</h2>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							.img-replacement{
+								display:block;
+								overflow:hidden;
+								text-indent:-999em;
+							}
+							#title{
+								font:16px arial;
+								color:red;
+								.img-replacement;
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Usando Mixins</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							.img-replacement{
+								display:block;
+								overflow:hidden;
+								text-indent:-999em;
+							}
+							#title{
+								font:16px arial;
+								color:red;
+								display:block;
+								overflow:hidden;
+								text-indent:-999em;
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Usando Mixins com parâmetros</h2>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							.border_radius(@radius){
+								border-radius: @radius;
+								-moz-border-radius: @radius;
+								-webkit-border-radius: @radius;
+							}
+							#box_aside{
+								width:300px;
+								height:300px;
+								background:blue;
+								.border_radius(10px);
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Usando Mixins com parâmetros</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							#box_aside{
+								width:300px;
+								height:300px;
+								background:blue;
+								border-radius: 10px;
+								-moz-border-radius: 10px;
+								-webkit-border-radius: 10px;
+							}
+						</code>
+					</pre>
+				</section>
+
+				<section data-markdown>
+					<h2>Usando Mixins sem parâmetros</h2>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							.nav_left(){
+								float:left;
+								display:inline-block;
+							}
+
+							#nav_main li{
+								width:60px;
+								.nav_left;
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Usando Mixins sem parâmetros</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							#nav_main li{
+								width:60px;
+								float:left;
+								display:inline-block;
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>A Variável @arguments</h2>
+					A variável @arguments, dentro do Mixins, se refere a todos os atributos passados por parâmetro.
+				</section>
+				<section data-markdown>
+					<h2>A Variável @arguments</h2>
+					
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							.box_shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+								box-shadow: @arguments;
+								-moz-box-shadow: @arguments;
+								-webkit-box-shadow: @arguments;
+							}
+							#box{
+								width:60px;
+								height:60px;
+								
+								.box_shadow(10px, 15px, 2px);
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>A Variável @arguments</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							#box{
+								width:60px;
+								height:60px;
+								
+								box-shadow: 10px 15px 2px #000;
+								-moz-box-shadow: 10px 15px 2px #000;
+								-webkit-box-shadow: 10px 15px 2px #000;
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Pattern-matching</h2>
+					Padrão correspondente aos parâmetros passados.
+				</section>
+				<section data-markdown>
+					<h2>Pattern-matching</h2>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							.bgc (dark, @color) {
+							  background-color: darken(@color, 5%);
+							}
+							.bgc (light, @color) {
+							  background-color: lighten(@color, 5%);
+							}
+							
+							@pat_mat: dark;
+							
+							body{
+								.bgc(@pat_mat, green);
+							}
+							
+							#box{
+								@pat_mat: light;
+								
+								.bgc(@pat_mat, green);
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Pattern-matching</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							body {
+							  background-color: #006700;
+							}
+							
+							#box {
+							  background-color: #009a00;
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Pattern-matching</h2>
+					O Pattern-matching também pode ser "escolhido", pela quantidade de parâmetros.
+				</section>
+				
+				<section data-markdown>
+					<h2>Pattern-matching</h2>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							.border_radius(@radius){
+								border-radius: @radius;
+								-moz-border-radius: @radius;
+								-webkit-border-radius: @radius;
+							}
+							.border_radius(@top, @left, @bottom, @right){
+								border-radius: @arguments;
+								-moz-border-radius: @arguments;
+								-webkit-border-radius: @arguments;
+							}
+							
+							#box{
+								.border_radius(10px);
+							}
+							#box_aside{
+								.border_radius(10px 5px 15px 20px);
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Pattern-matching</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							#box {
+							  width: 300px;
+							  height: 300px;
+							  background: blue;
+							  border-radius: 10px;
+							  -moz-border-radius: 10px;
+							  -webkit-border-radius: 10px;
+							}
+							
+							#box_aside {
+							  width: 300px;
+							  height: 300px;
+							  background: red;
+							  border-radius: 10px 5px 15px 20px;
+							  -moz-border-radius: 10px 5px 15px 20px;
+							  -webkit-border-radius: 10px 5px 15px 20px;
+							}
+
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<h2>Regras Aninhadas</h2>
+					Indentando o CSS.
+				</section>
+				<section data-markdown>
+					<h2>Regras Aninhadas</h2>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+						#header{
+							background-color:black;
+							#nav_main{
+								li,a{
+									color:#ccc;
+									.nav_left;
+								}
+							}
+						}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Regras Aninhadas</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							#header {
+							  background-color: black;
+							}
+							#header #nav_main li,
+							#header #nav_main a {
+							  color: #ccc;
+							  display: inline-block;
+							  float: left;
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<h2>Regras Aninhadas - Pseudo-Classes</h2>
+					Utilizando pseudo-classes no LESS
+				</section>
+				
+				<section data-markdown>
+					<h2>Regras Aninhadas - Pseudo-Classes</h2>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+						#nav_main a{
+						  	color: #ccc;
+						  	&:hover{
+								color:red;
+							}
+							&.active{
+								&:hover{
+									text-decoration:underline;
+								}
+							}
+						}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Regras Aninhadas - Pseudo-Classes</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							#nav_main a {
+							  color: #ccc;
+							}
+							#nav_main a:hover {
+							  color: red;
+							}
+							#nav_main a.active:hover {
+							  text-decoration: underline;
+							}
+						
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<h2>Operações</h2>
+					Qualquer número, cor ou variável pode ser usado em operações.<br/>
+					<p>O LESS identifica cada um deles.</p>
+				</section>
+				
+				<section data-markdown>
+					<h2>Operações</h2>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							.centralize(@width, @height){
+								width: @width;
+								height: @height;
+								position:absolute;
+								top:50%;
+								left:50%;
+								margin:-(@height/2) 0 0 @width/2*-1;
+							}
+
+							#all{
+								.centralize(100px,300px);
+
+								color: #999/3;
+								background-color:(yellow) + #333;
+							}
+						
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Operações</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							#all {
+							  width: 100px;
+							  height: 300px;
+							  position: absolute;
+							  top: 50%;
+							  left: 50%;
+							  margin: -150px 0 0 -50px;
+							  color: #333333;
+							  background-color: #ffff33;
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<h2>Funções de cor</h2>
+					O Less tem algumas funções que transformam cores.
+				</section>
+				<section>
+					<h2>Funções de cor</h2>
+						<p style="font-size:28px;text-align:left">
+							lighten(@color, 10%);    <br> // retorna uma cor que é 10% *mais clara* que @color
+						</p><br>
+						<p style="font-size:28px;text-align:left">
+							darken(@color, 10%);     <br> // retorna uma cor que é 10% *mais escura* que @color
+						</p><br>
+						<p style="font-size:28px;text-align:left">
+							saturate(@color, 10%);<br>    // retorna uma cor 10% *mais* saturada que @color
+						</p><br>
+						<p style="font-size:28px;text-align:left">
+							desaturate(@color, 10%); <br> // retorna uma cor 10% *menos* saturada que @color
+						</p><br>
+						<p style="font-size:28px;text-align:left">
+							fadein(@color, 10%);   <br>   // retorna uma cor 10% *mais* transparente que @color
+						</p>
+				</section>
+				<section>
+					<h2>Funções de cor</h2>
+						<p style="font-size:28px;text-align:left">
+							fadeout(@color, 10%);<br/>     // retorna uma cor 10% *mais* transparente que @color
+						</p><br>
+						<p style="font-size:28px;text-align:left">
+							fade(@color, 50%);   <br>     // retorna @color com 50% de transparencia
+						</p><br>
+						<p style="font-size:28px;text-align:left">
+							spin(@color, 10);       <br>  // retorna uma cor com uma matiz (hue) 10 graus maior que @color
+						</p><br>
+						<p style="font-size:28px;text-align:left">
+							spin(@color, -10);        <br>// retorna uma cor com uma matiz (hue) 10 graus menor que @color
+						</p><br>
+						<p style="font-size:28px;text-align:left">
+							mix(@color1, @color2);   <br> // retorna uma mistura entre a @color1 e @color2
+						</p>
+				</section>
+				
+				<section>
+					<h2>Namespaces</h2>
+					Namespaces são parecidos com métodos.
+				</section>
+				
+				<section data-markdown>
+					<h2>Namespaces</h2>
+					style.less
+					<pre>
+						<code style="margin-top: 20px;">
+							#box{
+								h1{
+									color:#fff;font-size:15px;
+								}
+
+								.centralize(@width, @height){
+									width: @width;
+									height: @height;
+									position:absolute;
+									top:50%;
+									left:50%;
+									margin:-(@height/2) 0 0 @width/2*-1;
+								}
+							}
+
+							#footer{
+								#box > .centralize(100px, 200px)
+							}
+						</code>
+					</pre>
+				</section>
+				
+				<section data-markdown>
+					<h2>Namespaces</h2>
+					style.css
+					<pre>
+						<code style="margin-top: 20px;">
+							#box h1 {
+							  color: #fff;
+							  font-size: 15px;
+							}
+							#footer {
+							  width: 100px;
+							  height: 200px;
+							  position: absolute;
+							  top: 50%;
+							  left: 50%;
+							  margin: -100px 0 0 -50px;
+							}
+							
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<h2>Comentários</h2>
+					<p>Há dois tipos de comentários no Less</p>
+					<ol>
+						<li>Os Invisíveis</li>
+						<li>Os Visíveis</li>
+					</ol>
+				</section>
+				
+				<section data-markdown>
+					<h2>Comentários</h2>
+					Invisível<br/>
+					<pre>
+						<code style="margin-top:20px">
+									// Esse comentário não é compilado
+						</code>
+					</pre>
+				</section>
+				<section data-markdown>
+					<h2>Comentários</h2>
+					Visível<br/>
+					<pre>
+						<code style="margin-top:20px">
+									/* Esse comentário é compilado */
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>@Import</h2>
+					<p>No Less podemos importar outros arquivos com as extensões .less ou .css</p>
+				</section>
+				<section data-markdown>
+					<h2>@import</h2>
+					<pre>
+						<code style="margin-top:20px">
+						@import 'style';// sem a extensão, por padrão é chamado o .less
+						@import 'style.less';
+						
+						@import 'style.css';
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<br />
+					<br />
+					<br />
+					<h2>Obrigado!<br/></h2><br/>
+					<a href="https://www.facebook.com/lucas.cavalcantimeloqueiroz" target="_blank">Facebook</a>
+					<br/>
+					<a href="http://lucascavalcanti.com.br/" target="_blank">http://lucascavalcanti.com.br/</a>
+					<br/>
+					<a href="https://github.com/lucascmelo/" target="_blank">github</a>
+				</section>
+				<section data-state="bootstrap">
+					<br><br><br><br>
+					<h1>Bônus</h1>
+				</section>
+				<section data-state="bootstrap">
+					<br/><br/>
+					<a href="http://twitter.github.com/bootstrap/index.html" target="_blank">
+						<img width="300" height="auto" src="lib/img/bootstrap.png" alt="" style="background:none;border:none;border-radius:500px;-webkit-box-shadow:none;box-shadow:none" />
+					</a>
+				</section>
+				<section data-state="bootstrap">
+					<h2>Bootstrap</h2>
+					<p>O Bootstrap é elegante, intuitivo e poderoso<span style="text-decoration:line-through;font-size:18px"> (FODA)</span>.</p>
+					<p>Um Framework para estruturar seus projetos de forma rápida e fácil.</p>
+				</section>
+				<section data-state="bootstrap">
+					<h2>Legal!</h2>
+					<p>Mas o que ele faz?</p>
+					<img width="400" height="auto" src="lib/img/cool.png" alt="" />
+				</section>
+				<section data-state="bootstrap">
+					<ol>
+						<li>Fluid grid</li>
+						<li>Responsive design</li>
+						<li>Supported devices</li>
+						<li>Base CSS<br/>Forms, Buttons, Images, Icons Sprites...</li>
+						<li>Dropdown menus</li>
+						<li>JS Componentes<br/>Modal, ToolTip, Accordion, Gallery Images...</li>
+					</ol>
+				</section>
+				<section data-state="bootstrap">
+					<br><br><br>
+					<h1>E o melhor de tudo...</h1>
+					
+				</section>
+				<section data-state="bootstrap">
+					<img width="300" height="auto" src="lib/img/less.png" alt="" style="border:none;background:none;-webkit-box-shadow:none" /><br/>
+					<img width="500" height="auto" src="lib/img/mother-of-god-template.jpeg" alt="" />
+				</section>
+				<section data-state="bootstrap">
+					<h2>Como utilizar?</h2>
+					<a href="http://twitter.github.com/bootstrap/" target="_blank">http://twitter.github.com/bootstrap/</a>
+				</section>
+				
+				<section>
+					<h2>Referências</h2>
+					<ol>
+					 	<li>
+							<a href="http://incident57.com/less/" target="_blank">http://incident57.com/less/ - Compilador Mac</a>
+						</li>   
+						<li>
+						    <a href="http://winless.org/" target="_blank">http://winless.org/ - Compilador Windows</a>
+						</li>
+						<li>
+						    <a href="http://wearekiss.com/simpless" target="_blank">http://wearekiss.com/simpless - Compilador Linux</a>
+						</li>
+						<li>
+							<a href="http://lesselements.com/" target="_blank">http://lesselements.com/ - Mixins CSS3</a>
+						</li>
+						<li>
+							<a href="http://twitter.github.com/bootstrap/" target="_blank">http://twitter.github.com/bootstrap/ - Bootstrap</a>
+						</li>
+						
+					</ol>
+				</section>
+				<section>
+					<br />
+					<br />
+					<br />
+					<h2>Valeu Garanhus!</h2><br/>
+					<a href="https://www.facebook.com/lucas.cavalcantimeloqueiroz" target="_blank">Facebook</a>
+					<br/>
+					<a href="http://lucascavalcanti.com.br/" target="_blank">http://lucascavalcanti.com.br/</a>
+					<br/>
+					<a href="https://github.com/lucascmelo/" target="_blank">github</a>
+				</section>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				theme: Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+
+	</body>
+</html>
